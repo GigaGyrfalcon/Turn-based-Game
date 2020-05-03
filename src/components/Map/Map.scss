@@ -1,0 +1,60 @@
+.Map {
+  width: 402px;
+  height: 402px;
+  border: 1px solid #001100;
+  background-color: #282c34;
+}
+
+.block {
+  display: block;
+  position: relative;
+  float: left;
+  width: 40px;
+  height: 40px;
+  font-size: 10px;
+  line-height: 1;
+  border: 1px solid darkmagenta;
+  background-color: cornsilk;
+  &-aim {
+    &-up {
+      &:before {
+        transform: rotate(90deg);
+      }
+    }
+    &-right {
+      &:before {
+        transform: rotate(180deg);
+      }
+    }
+    &-down {
+      &:before {
+        transform: rotate(270deg);
+      }
+    }
+  }
+  &-away,
+  &-home {
+    &:before {
+      content: '←';
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      width: 90%;
+      height: 90%;
+      font-size: 24px;
+      text-align: center;
+      line-height: 28px;
+      border-radius: 50%;
+    }
+  }
+  &-home {
+    &:before {
+      background-color: blue;
+    }
+  }
+  &-away {
+    &:before {
+      background-color: red;
+    }
+  }
+}
